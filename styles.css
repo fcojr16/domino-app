@@ -27,7 +27,7 @@ body {
     text-align: center;
     color: #dc143c;
     font-size: 2rem;
-    font-style: italic; /* Italic for title */
+    font-style: italic;
     margin-bottom: 5px;
 }
 
@@ -44,6 +44,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .player {
@@ -57,6 +58,7 @@ body {
     position: relative;
 }
 
+/* Name and Points */
 .name-edit {
     font-size: 1.2rem;
     font-weight: bold;
@@ -69,7 +71,6 @@ body {
     text-decoration: underline;
 }
 
-/* Other Styles (unchanged from previous version) */
 .points {
     font-size: 2rem;
     font-weight: bold;
@@ -78,6 +79,7 @@ body {
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
+/* Score List */
 .score-list {
     list-style: none;
     padding: 0;
@@ -117,6 +119,7 @@ body {
     background-color: #002868;
 }
 
+/* Input fields */
 .score-input {
     font-size: 1rem;
     padding: 10px;
@@ -127,6 +130,7 @@ body {
     box-sizing: border-box;
 }
 
+/* Buttons */
 button {
     background-color: #002868;
     color: #ffffff;
@@ -145,6 +149,7 @@ button:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Reset Button */
 .reset-button {
     background-color: #ffffff;
     color: #002868;
@@ -161,19 +166,16 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .scoreboard {
-        flex-direction: column;
+        flex-direction: row; /* Ensures lists are side by side */
     }
 
     .player {
-        margin-bottom: 20px;
+        flex: 1 1 50%; /* Ensure both players take equal width */
+        margin-bottom: 10px;
     }
 
-    .points {
-        font-size: 1.8rem;
-    }
-
-    .score-input {
-        font-size: 0.9rem;
+    .score-list {
+        max-height: 150px; /* Slightly smaller for mobile */
     }
 
     button {
